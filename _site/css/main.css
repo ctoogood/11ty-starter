@@ -1,0 +1,82 @@
+:root {
+    --primaryColor: #AC6D6D;
+    --secondaryColor: #707070;
+    --textLight: #FFFFFF;
+    --textDark: #707070;
+    --textHighlight: #AC6D6D;
+    --bgLight: #FFFFFF;
+    --textFont: Montserrat;
+    --headerFont: Montserrat;
+  }
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v15-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/montserrat-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/montserrat-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/montserrat-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/montserrat-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/montserrat-v15-latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+  }
+  
+
+/*HEADER*/
+nav {
+}
+
+
+
+.header__container {
+    max-height: 6rem;
+}
+
+.header__navItem {
+    min-height: 0!important;
+}
+
+/*FOOTER*/
+footer {
+    position: relative;
+    bottom:0;
+    text-align: center;
+}
+
+/*MAIN*/
+.text-font {
+    font-family: var(--textFont)!important;
+}
+
+.text-dark {
+    color: var(--textDark);
+}
+
+main {
+    min-height:100vh;
+}
+
+.image-container {
+    width:100%;
+    overflow: hidden;
+}
+
+.image {
+    object-fit:cover;
+    height:100%;
+    width:100%;
+}
+
+.scale {
+    transition: all 2s linear;
+}
+
+.scale:hover {
+    transform: scale(1.1);
+}
+
+
+
+/*HOME*/
+

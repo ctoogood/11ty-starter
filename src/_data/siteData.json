@@ -1,0 +1,9 @@
+{
+    "siteMetadata": {
+        "title": "11ty Starter",
+        "subtitle": "11ty & UIKit",
+        "description": "Use this as a base to start a new 11ty project",
+        "siteUrl": "enter url",
+        "image": "../images/35147177.png"
+    }
+}

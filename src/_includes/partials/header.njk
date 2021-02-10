@@ -1,0 +1,75 @@
+<nav class="uk-hidden@s">
+  <div style="height:50px;" class="uk-text-center">
+    <a class="uk-padding-small" href="/">
+      {{ siteData.siteMetadata.title }}
+    </a>
+  </div>
+  <div class="uk-navbar-container header__container" uk-navbar="uk-navbar">
+    <div class="uk-navbar-center uk-padding-small">
+      {% set navPages = collections.all | eleventyNavigation %}
+      <ul class="uk-navbar-nav">
+        {%- for entry in navPages %}
+          <li {% if entry.url == page.url %} class="uk-text-bold" {% endif %}>
+            {% if entry.title !== 'Topics'%}
+              <a class="text-font" href="{{ entry.url | url }}">{{ entry.title }}</a>
+            {% else %}
+              <a class="text-font" href="#">{{ entry.title }}</a>
+            {% endif %}
+            {% if entry.children != '' %}
+              <div uk-dropdown="mode: click, offset: 0">
+                {% for child in entry.children %}
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li>
+                      <a {% if child.url == page.url %} class="uk-text-bold" {% endif %} href="{{ child.url }}">{{ child.title }}</a>
+                    </li>
+                  </ul>
+                {% endfor %}
+              </div>
+
+            {% endif %}
+          </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+<div uk-sticky="show-on-up: true; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #scrollup-dropdown" class="uk-sticky uk-visible@s" style="">
+  <nav class="uk-navbar-container">
+    <div class="uk-container">
+      <div uk-navbar="" class="uk-navbar header__container">
+        <div class="uk-navbar-left">
+          <a class="uk-height-1-1 uk-padding-small" href="/">
+            {{ siteData.siteMetadata.title }}
+          </a>
+        </div>
+        <div class="uk-navbar-right uk-padding-small">
+          {% set navPages = collections.all | eleventyNavigation %}
+          <ul class="uk-navbar-nav">
+            {%- for entry in navPages %}
+              <li {% if entry.url == page.url %} class="uk-text-bold" {% endif %}>
+                {% if entry.title !== 'Topics'%}
+                  <a class="text-font" href="{{ entry.url | url }}">{{ entry.title }}</a>
+                {% else %}
+                  <a class="text-font" href="#">{{ entry.title }}</a>
+                {% endif %}
+                {% if entry.children != '' %}
+                  <div uk-dropdown="offset: 0">
+                    {% for child in entry.children %}
+                      <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li>
+                          <a {% if child.url == page.url %} class="uk-text-bold" {% endif %} href="{{ child.url }}">{{ child.title }}</a>
+                        </li>
+                      </ul>
+                    {% endfor %}
+                  </div>
+
+                {% endif %}
+              </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>
